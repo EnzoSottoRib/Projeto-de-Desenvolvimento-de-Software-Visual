@@ -5,6 +5,7 @@
 //MINIMAL APIs - C# - Minimal APIs
 
 using API.Models;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +18,12 @@ var app = builder.Build();
 app.MapGet("/", () => "API Sítio Arqueológico");
 
 //GET: /api/produto/listar
-
+app.MapGet("/api/item/listar", () => {
+    if (itens.Count > 0){
+        return Results.Ok(itens);
+    }
+    return Results.NotFound();
+});
 
 //GET: /api/produto/buscar/{id}
 

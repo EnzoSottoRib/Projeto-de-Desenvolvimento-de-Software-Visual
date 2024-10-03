@@ -1,0 +1,16 @@
+### Requisação para a raiz da aplicação
+GET http://localhost:5020
+
+### Listar produtos
+
+### Buscar produto
+
+
+### Cadastrar produto
+
+
+### Deletar produto
+
+
+### Alterar produto
+

@@ -2,15 +2,26 @@
 GET http://localhost:5020
 
 ### Listar produtos
+GET http://localhost:5020/produtos
 
 ### Buscar produto
-
+GET http://localhost:5020/produtos/{id}
 
 ### Cadastrar produto
-
+POST http://localhost:5020/produtos
+{
+  "nome": "Produto C",
+  "preco": 150.0,
+  "descricao": "Descrição do produto C"
+}
 
 ### Deletar produto
-
+DELETE http://localhost:5020/produtos/{id}
 
 ### Alterar produto
-
+PUT http://localhost:5020/produtos/{id}
+{
+  "nome": "Produto C Atualizado",
+  "preco": 200.0,
+  "descricao": "Nova descrição do produto C"
+}

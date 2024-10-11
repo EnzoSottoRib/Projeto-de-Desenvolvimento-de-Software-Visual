@@ -9,6 +9,8 @@ GET http://localhost:5020/produtos/{id}
 
 ### Cadastrar produto
 POST http://localhost:5020/produtos
+Content-Type: application/json
+
 {
   "nome": "Produto C",
   "preco": 150.0,
@@ -20,6 +22,8 @@ DELETE http://localhost:5020/produtos/{id}
 
 ### Alterar produto
 PUT http://localhost:5020/produtos/{id}
+Content-Type: application/json
+
 {
   "nome": "Produto C Atualizado",
   "preco": 200.0,

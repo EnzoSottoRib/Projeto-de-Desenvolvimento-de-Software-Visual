@@ -7,7 +7,6 @@
 using API.Models;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http.Features;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -83,11 +82,3 @@ app.MapPut("/api/item/alterar/{id}", (int id, Item updatedItem) =>
 });
 
 app.Run();
-
-// Modelo Item
-public class Item
-{
-    public int Id { get; set; }
-    public string Nome { get; set; }
-    public string Descricao { get; set; }
-}

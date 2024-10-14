@@ -13,7 +13,7 @@ public class AppDataContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=Ecommerce.db");
+        optionsBuilder.UseSqlite("Data Source=Database.db");
     }
 
 }

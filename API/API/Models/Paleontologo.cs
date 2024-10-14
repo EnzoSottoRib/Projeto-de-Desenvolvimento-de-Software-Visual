@@ -13,7 +13,7 @@ public class Paleontologo
     public string? Id { get; set; }
     public string? Nome { get; set; }
     public string? Cpf { get; set; }
-    public DateTime DataNascimento { get; set; }
+    public string? DataNascimento { get; set; }
     public int AnosExperiencia { get; set; }
     public string? AreaEspecializacao { get; set; }
     public int IdMatricula { get; set; }

@@ -1,31 +1,123 @@
 ### Requisação para a raiz da aplicação
 GET http://localhost:5020
 
-### Listar produtos
-GET http://localhost:5020/produtos
+### Listar arqueologos
+GET http://localhost:5020/arqueologos
 
-### Buscar produto
-GET http://localhost:5020/produtos/{id}
+### Listar artefatos
+GET http://localhost:5020/artefatos
 
-### Cadastrar produto
-POST http://localhost:5020/produtos
+### Listar fosseis
+GET http://localhost:5020/fosseis
+
+### Listar peleontologos
+GET http://localhost:5020/peleontologos
+
+### Buscar arqueologos
+GET http://localhost:5020/arqueologos/{nome}
+
+### Buscar artefatos
+GET http://localhost:5020/artefatos/{nome}
+
+### Buscar fosseis
+GET http://localhost:5020/fosseis/{nome}
+
+### Buscar peleontologos
+GET http://localhost:5020/peleontologos/{nome}
+
+### Cadastrar artefato
+POST http://localhost:5020/artefato
 Content-Type: application/json
 
 {
-  "nome": "Produto C",
-  "preco": 150.0,
-  "descricao": "Descrição do produto C"
+  "nome": "Bastão de marfim",
+  "periodo": "Paleolítico Superior",
+  "civilizacaoOrigem": "Primeiros humanos America do Norte",
+  "funcionalidade": "Criação de cordas",
+  "dimensao": "21cm",
+  "material": "Origem vegetal"
 }
 
-### Deletar produto
-DELETE http://localhost:5020/produtos/{id}
-
-### Alterar produto
-PUT http://localhost:5020/produtos/{id}
+### Cadastrar fossil
+POST http://localhost:5020/fossil
 Content-Type: application/json
 
 {
-  "nome": "Produto C Atualizado",
-  "preco": 200.0,
-  "descricao": "Nova descrição do produto C"
+  "nome": "Maximus",
+  "nomeCientifico": "Tyrannosaurus rex",
+  "localizacaoDescoberta": "Ilha de Madagascar",
+  "tipoFossil": "Crânio",
+  "especiaOrganismo": "T-Rex",
+  "condicaoPreservacao": "Deteriorada",
+  "epocaGeologica": "Cretáceo"
+}
+
+### Cadastrar peleontologo
+POST http://localhost:5020/peleontologo
+Content-Type: application/json
+
+{
+  "nome": "Jose Luiz Datena",
+  "cpf": "123-123-643.00",
+  "dataNascimento": "05/09/1995",
+  "anosExperiencia": "4",
+  "areaEspecializacao": "Vertebrados e paleobotânica",
+  "idMatricula":578234634734
+}
+
+### Cadastrar arqueologo
+POST http://localhost:5020/arqueologo
+Content-Type: application/json
+
+{
+  "nome": "Tiririca Messias Bolsonaro",
+  "cpf": "772-642-126.12",
+  "dataNascimento": "10/01/1980",
+  "anosExperiencia": "10",
+  "areaEspecializacao": "Egípcia",
+  "idRegistroProfissional":45745743456674
+}
+
+### Deletar fossil
+DELETE http://localhost:5020/fossil/{id}
+
+### Deletar artefato
+DELETE http://localhost:5020/artefato/{id}
+
+### Deletar arqueologo
+DELETE http://localhost:5020/arqueologo/{id}
+
+### Deletar paleontologo
+DELETE http://localhost:5020/paleontologo/{id}
+
+### Alterar fossil
+PUT http://localhost:5020/fossil/{id}
+Content-Type: application/json
+
+{
+  "nome": "Horridus"
+}
+
+### Alterar artefato
+PUT http://localhost:5020/artefato/{id}
+Content-Type: application/json
+
+{
+  "periodo": "Cenozoico"
+}
+
+### Alterar arqueologo
+PUT http://localhost:5020/arqueologo/{id}
+Content-Type: application/json
+
+{
+  "AnosExperiencia": 7
+}
+
+### Alterar paleontologo
+PUT http://localhost:5020/paleontologo/{id}
+Content-Type: application/json
+
+{
+  "AreaEspecializacao": "Histórica"
 }

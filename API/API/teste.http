@@ -2,31 +2,31 @@
 GET http://localhost:5020
 
 ### Listar arqueologos
-GET http://localhost:5020/arqueologos
+GET http://localhost:5020/arqueologo/listar
 
 ### Listar artefatos
-GET http://localhost:5020/artefatos
+GET http://localhost:5020/artefato/listar
 
 ### Listar fosseis
-GET http://localhost:5020/fosseis
+GET http://localhost:5020/fossil/listar
 
-### Listar peleontologos
-GET http://localhost:5020/peleontologos
+### Listar paleontologos
+GET http://localhost:5020/paleontologo/listar
 
 ### Buscar arqueologos
-GET http://localhost:5020/arqueologos/{nome}
+GET http://localhost:5020/arqueologo/buscar/{nome}
 
 ### Buscar artefatos
-GET http://localhost:5020/artefatos/{nome}
+GET http://localhost:5020/artefato/buscar/{nome}
 
 ### Buscar fosseis
-GET http://localhost:5020/fosseis/{nome}
+GET http://localhost:5020/fossil/buscar/{nome}
 
 ### Buscar peleontologos
-GET http://localhost:5020/peleontologos/{nome}
+GET http://localhost:5020/peleontologo/buscar/{nome}
 
 ### Cadastrar artefato
-POST http://localhost:5020/artefato
+POST http://localhost:5020/artefato/cadastrar
 Content-Type: application/json
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ### Cadastrar fossil
-POST http://localhost:5020/fossil
+POST http://localhost:5020/fossil/cadastrar
 Content-Type: application/json
 
 {
@@ -52,8 +52,8 @@ Content-Type: application/json
   "epocaGeologica": "Cretáceo"
 }
 
-### Cadastrar peleontologo
-POST http://localhost:5020/peleontologo
+### Cadastrar paleontologo
+POST http://localhost:5020/paleontologo/cadastrar
 Content-Type: application/json
 
 {
@@ -61,12 +61,12 @@ Content-Type: application/json
   "cpf": "123-123-643.00",
   "dataNascimento": "05/09/1995",
   "anosExperiencia": "4",
-  "areaEspecializacao": "Vertebrados e paleobotânica",
+  "areaEspecializacaoId": 1,
   "idMatricula":578234634734
 }
 
 ### Cadastrar arqueologo
-POST http://localhost:5020/arqueologo
+POST http://localhost:5020/arqueologo/cadastrar
 Content-Type: application/json
 
 {
@@ -74,24 +74,24 @@ Content-Type: application/json
   "cpf": "772-642-126.12",
   "dataNascimento": "10/01/1980",
   "anosExperiencia": "10",
-  "areaEspecializacao": "Egípcia",
-  "idRegistroProfissional":45745743456674
+  "idRegistroProfissional":45745743456674,
+  "formacaoAcademicaId": 2
 }
 
 ### Deletar fossil
-DELETE http://localhost:5020/fossil/{id}
+DELETE http://localhost:5020/fossil/deletar/{id}
 
 ### Deletar artefato
-DELETE http://localhost:5020/artefato/{id}
+DELETE http://localhost:5020/artefato/deletar/{id}
 
 ### Deletar arqueologo
-DELETE http://localhost:5020/arqueologo/{id}
+DELETE http://localhost:5020/arqueologo/deletar/{id}
 
 ### Deletar paleontologo
-DELETE http://localhost:5020/paleontologo/{id}
+DELETE http://localhost:5020/paleontologo/deletar/{id}
 
 ### Alterar fossil
-PUT http://localhost:5020/fossil/{id}
+PUT http://localhost:5020/fossil/alterar/{id}
 Content-Type: application/json
 
 {
@@ -99,7 +99,7 @@ Content-Type: application/json
 }
 
 ### Alterar artefato
-PUT http://localhost:5020/artefato/{id}
+PUT http://localhost:5020/artefato/alterar/{id}
 Content-Type: application/json
 
 {
@@ -107,7 +107,7 @@ Content-Type: application/json
 }
 
 ### Alterar arqueologo
-PUT http://localhost:5020/arqueologo/{id}
+PUT http://localhost:5020/arqueologo/alterar/{id}
 Content-Type: application/json
 
 {
@@ -115,9 +115,9 @@ Content-Type: application/json
 }
 
 ### Alterar paleontologo
-PUT http://localhost:5020/paleontologo/{id}
+PUT http://localhost:5020/paleontologo/alterar/{id}
 Content-Type: application/json
 
 {
-  "AreaEspecializacao": "Histórica"
+  "idMatricula": "666364534-356-432"
 }

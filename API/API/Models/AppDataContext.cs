@@ -10,6 +10,8 @@ public class AppDataContext : DbContext
     public DbSet<Artefato> Artefatos { get; set; }
     public DbSet<Fossil> Fosseis { get; set; }
     public DbSet<Paleontologo> Paleontologos { get; set; }
+    public DbSet<AreaEspecializacao> AreasEspecializacao { get; set; }
+    public DbSet<FormacaoAcademica> FormacoesAcademicas { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

@@ -3,6 +3,7 @@ using System;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,29 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20241017114912_ArrumandoModels")]
+    partial class ArrumandoModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
-
-            modelBuilder.Entity("API.Models.AreaEspecializacao", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Pais")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AreasEspecializacao");
-                });
 
             modelBuilder.Entity("API.Models.Arqueologo", b =>
                 {
@@ -40,19 +26,19 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("AnosExperiencia")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Cpf")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("FormacaoAcademicaId")
+                    b.Property<int>("FormacaoAcademicaAId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("IdRegistroProfissional")
@@ -63,8 +49,6 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FormacaoAcademicaId");
-
                     b.ToTable("Arqueologos");
                 });
 
@@ -74,10 +58,10 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
+                    b.Property<string>("CivilizacaoOrigem")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CivilizacaoOrigem")
+                    b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Dimensao")
@@ -100,33 +84,16 @@ namespace API.Migrations
                     b.ToTable("Artefatos");
                 });
 
-            modelBuilder.Entity("API.Models.FormacaoAcademica", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Universidade")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FormacoesAcademicas");
-                });
-
             modelBuilder.Entity("API.Models.Fossil", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
+                    b.Property<string>("CondicaoPreservacao")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CondicaoPreservacao")
+                    b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("EpocaGeologica")
@@ -158,16 +125,16 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("AnosExperiencia")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AreaEspecializacaoId")
+                    b.Property<int>("AreaEspecializacaoPId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Cpf")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DataNascimento")
@@ -181,31 +148,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AreaEspecializacaoId");
-
                     b.ToTable("Paleontologos");
-                });
-
-            modelBuilder.Entity("API.Models.Arqueologo", b =>
-                {
-                    b.HasOne("API.Models.FormacaoAcademica", "FormacaoAcademica")
-                        .WithMany()
-                        .HasForeignKey("FormacaoAcademicaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FormacaoAcademica");
-                });
-
-            modelBuilder.Entity("API.Models.Paleontologo", b =>
-                {
-                    b.HasOne("API.Models.AreaEspecializacao", "AreaEspecializacao")
-                        .WithMany()
-                        .HasForeignKey("AreaEspecializacaoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AreaEspecializacao");
                 });
 #pragma warning restore 612, 618
         }

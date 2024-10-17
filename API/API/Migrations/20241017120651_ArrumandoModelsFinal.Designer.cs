@@ -3,6 +3,7 @@ using System;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20241017120651_ArrumandoModelsFinal")]
+    partial class ArrumandoModelsFinal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -40,13 +43,13 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("AnosExperiencia")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Cpf")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DataNascimento")
@@ -74,10 +77,10 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
+                    b.Property<string>("CivilizacaoOrigem")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CivilizacaoOrigem")
+                    b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Dimensao")
@@ -123,10 +126,10 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
+                    b.Property<string>("CondicaoPreservacao")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CondicaoPreservacao")
+                    b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("EpocaGeologica")
@@ -158,9 +161,6 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AdicionadoEm")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("AnosExperiencia")
                         .HasColumnType("INTEGER");
 
@@ -168,6 +168,9 @@ namespace API.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Cpf")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DataNascimento")

@@ -48,6 +48,7 @@ Content-Type: application/json
   "funcionalidade": "Criação de cordas",
   "dimensao": "21cm",
   "material": "Origem vegetal"
+  "arqueologoId": 1
 }
 
 ### Cadastrar fossil
@@ -62,6 +63,7 @@ Content-Type: application/json
   "especiaOrganismo": "T-Rex",
   "condicaoPreservacao": "Deteriorada",
   "epocaGeologica": "Cretáceo"
+  "paleontologoId": 1
 }
 
 ### Cadastrar paleontologo

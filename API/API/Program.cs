@@ -1,9 +1,3 @@
-//Testar as APIs
-// - Rest Client - Extensão do VS Code
-// - Postman
-// - Insomnia
-//MINIMAL APIs - C# - Minimal APIs
-
 using API.Models;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;

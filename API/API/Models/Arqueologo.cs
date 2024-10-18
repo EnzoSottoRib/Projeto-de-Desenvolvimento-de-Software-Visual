@@ -18,7 +18,7 @@ public class Arqueologo
     public int IdRegistroProfissional { get; set; }
     // herda de FormacaoAcademica
     public int FormacaoAcademicaId { get; set; }
-     public FormacaoAcademica? FormacaoAcademica { get; set; }
+     public FormacaoAcademica FormacaoAcademica { get; set; }
     public DateTime AdicionadoEm { get; set; }
 
 

@@ -13,17 +13,29 @@ GET http://localhost:5020/fossil/listar
 ### Listar paleontologos
 GET http://localhost:5020/paleontologo/listar
 
-### Buscar arqueologos
+### Listar areas de especializacao
+GET http://localhost:5020/area-especializacao/listar
+
+### Listar formacoes academicas
+GET http://localhost:5020/formacao_academica/listar
+
+### Buscar arqueologo
 GET http://localhost:5020/arqueologo/buscar/{nome}
 
-### Buscar artefatos
+### Buscar artefato
 GET http://localhost:5020/artefato/buscar/{nome}
 
-### Buscar fosseis
+### Buscar fossei
 GET http://localhost:5020/fossil/buscar/{nome}
 
-### Buscar peleontologos
+### Buscar peleontologo
 GET http://localhost:5020/peleontologo/buscar/{nome}
+
+### Buscar area especializacao
+GET http://localhost:5020/area-especializacao/buscar/{nome}
+
+### Buscar formacao academica
+GET http://localhost:5020/formacao-academica/buscar/{nome}
 
 ### Cadastrar artefato
 POST http://localhost:5020/artefato/cadastrar
@@ -36,6 +48,7 @@ Content-Type: application/json
   "funcionalidade": "Criação de cordas",
   "dimensao": "21cm",
   "material": "Origem vegetal"
+  "arqueologoId": 1
 }
 
 ### Cadastrar fossil
@@ -50,6 +63,7 @@ Content-Type: application/json
   "especiaOrganismo": "T-Rex",
   "condicaoPreservacao": "Deteriorada",
   "epocaGeologica": "Cretáceo"
+  "paleontologoId": 1
 }
 
 ### Cadastrar paleontologo
@@ -78,6 +92,24 @@ Content-Type: application/json
   "formacaoAcademicaId": 2
 }
 
+### Cadastrar area especializacao
+POST http://localhost:5020/area-especializacao/cadastrar
+Content-Type: application/json
+
+{
+  "nome": "Triceratops",
+  "pais": "Irlanda"
+}
+
+### Cadastrar formacao academica
+POST http://localhost:5020/formacao-academica/cadastrar
+Content-Type: application/json
+
+{
+  "nome": "Geologia",
+  "universidade": "Universidade de Portsmouth, Inglaterra"
+}
+
 ### Deletar fossil
 DELETE http://localhost:5020/fossil/deletar/{id}
 
@@ -89,6 +121,12 @@ DELETE http://localhost:5020/arqueologo/deletar/{id}
 
 ### Deletar paleontologo
 DELETE http://localhost:5020/paleontologo/deletar/{id}
+
+### Deletar formacao academica
+DELETE http://localhost:5020/formacao-academica/deletar/{id}
+
+### Deletar area especializacao
+DELETE http://localhost:5020/area-especializacao/deletar/{id}
 
 ### Alterar fossil
 PUT http://localhost:5020/fossil/alterar/{id}
@@ -119,5 +157,21 @@ PUT http://localhost:5020/paleontologo/alterar/{id}
 Content-Type: application/json
 
 {
-  "idMatricula": "666364534-356-432"
+  "idMatricula": 666364534356432
+}
+
+### Alterar area especializacao
+PUT http://localhost:5020/area_especializacao/alterar/{id}
+Content-Type: application/json
+
+{
+  "Nome": "Anquilossauro"
+}
+
+### Alterar formacao academica
+PUT http://localhost:5020/formacao_academica/alterar/{id}
+Content-Type: application/json
+
+{
+  "Universidade": "Universidade de Drexel, Filadélfia"
 }

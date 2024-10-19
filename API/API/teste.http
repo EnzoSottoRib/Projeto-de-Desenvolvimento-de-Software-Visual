@@ -2,43 +2,43 @@
 GET http://localhost:5020
 
 ### Listar arqueologos
-GET http://localhost:5020/arqueologo/listar
+GET http://localhost:5020/api/arqueologo/listar
 
 ### Listar artefatos
-GET http://localhost:5020/artefato/listar
+GET http://localhost:5020/api/artefato/listar
 
 ### Listar fosseis
-GET http://localhost:5020/fossil/listar
+GET http://localhost:5020/api/fossil/listar
 
 ### Listar paleontologos
-GET http://localhost:5020/paleontologo/listar
+GET http://localhost:5020/api/paleontologo/listar
 
 ### Listar areas de especializacao
-GET http://localhost:5020/area-especializacao/listar
+GET http://localhost:5020/api/area-especializacao/listar
 
 ### Listar formacoes academicas
-GET http://localhost:5020/formacao_academica/listar
+GET http://localhost:5020/api/formacao_academica/listar
 
 ### Buscar arqueologo
-GET http://localhost:5020/arqueologo/buscar/{nome}
+GET http://localhost:5020/api/arqueologo/buscar/{nome}
 
 ### Buscar artefato
-GET http://localhost:5020/artefato/buscar/{nome}
+GET http://localhost:5020/api/artefato/buscar/{nome}
 
 ### Buscar fossei
-GET http://localhost:5020/fossil/buscar/{nome}
+GET http://localhost:5020/api/fossil/buscar/{nome}
 
 ### Buscar peleontologo
-GET http://localhost:5020/peleontologo/buscar/{nome}
+GET http://localhost:5020/api/peleontologo/buscar/{nome}
 
 ### Buscar area especializacao
-GET http://localhost:5020/area-especializacao/buscar/{nome}
+GET http://localhost:5020/api/area-especializacao/buscar/{nome}
 
 ### Buscar formacao academica
-GET http://localhost:5020/formacao-academica/buscar/{nome}
+GET http://localhost:5020/api/formacao-academica/buscar/{nome}
 
 ### Cadastrar artefato
-POST http://localhost:5020/artefato/cadastrar
+POST http://localhost:5020/api/artefato/cadastrar
 Content-Type: application/json
 
 {
@@ -52,7 +52,7 @@ Content-Type: application/json
 }
 
 ### Cadastrar fossil
-POST http://localhost:5020/fossil/cadastrar
+POST http://localhost:5020/api/fossil/cadastrar
 Content-Type: application/json
 
 {
@@ -67,7 +67,7 @@ Content-Type: application/json
 }
 
 ### Cadastrar paleontologo
-POST http://localhost:5020/paleontologo/cadastrar
+POST http://localhost:5020/api/paleontologo/cadastrar
 Content-Type: application/json
 
 {
@@ -80,7 +80,7 @@ Content-Type: application/json
 }
 
 ### Cadastrar arqueologo
-POST http://localhost:5020/arqueologo/cadastrar
+POST http://localhost:5020/api/arqueologo/cadastrar
 Content-Type: application/json
 
 {
@@ -93,7 +93,7 @@ Content-Type: application/json
 }
 
 ### Cadastrar area especializacao
-POST http://localhost:5020/area-especializacao/cadastrar
+POST http://localhost:5020/api/area-especializacao/cadastrar
 Content-Type: application/json
 
 {
@@ -102,7 +102,7 @@ Content-Type: application/json
 }
 
 ### Cadastrar formacao academica
-POST http://localhost:5020/formacao-academica/cadastrar
+POST http://localhost:5020/api/formacao-academica/cadastrar
 Content-Type: application/json
 
 {
@@ -111,25 +111,25 @@ Content-Type: application/json
 }
 
 ### Deletar fossil
-DELETE http://localhost:5020/fossil/deletar/{id}
+DELETE http://localhost:5020/api/fossil/deletar/{id}
 
 ### Deletar artefato
-DELETE http://localhost:5020/artefato/deletar/{id}
+DELETE http://localhost:5020/api/artefato/deletar/{id}
 
 ### Deletar arqueologo
-DELETE http://localhost:5020/arqueologo/deletar/{id}
+DELETE http://localhost:5020/api/arqueologo/deletar/{id}
 
 ### Deletar paleontologo
-DELETE http://localhost:5020/paleontologo/deletar/{id}
+DELETE http://localhost:5020/api/paleontologo/deletar/{id}
 
 ### Deletar formacao academica
-DELETE http://localhost:5020/formacao-academica/deletar/{id}
+DELETE http://localhost:5020/api/formacao-academica/deletar/{id}
 
 ### Deletar area especializacao
-DELETE http://localhost:5020/area-especializacao/deletar/{id}
+DELETE http://localhost:5020/api/area-especializacao/deletar/{id}
 
 ### Alterar fossil
-PUT http://localhost:5020/fossil/alterar/{id}
+PUT http://localhost:5020/api/fossil/alterar/{id}
 Content-Type: application/json
 
 {
@@ -137,7 +137,7 @@ Content-Type: application/json
 }
 
 ### Alterar artefato
-PUT http://localhost:5020/artefato/alterar/{id}
+PUT http://localhost:5020/api/artefato/alterar/{id}
 Content-Type: application/json
 
 {
@@ -145,7 +145,7 @@ Content-Type: application/json
 }
 
 ### Alterar arqueologo
-PUT http://localhost:5020/arqueologo/alterar/{id}
+PUT http://localhost:5020/api/arqueologo/alterar/{id}
 Content-Type: application/json
 
 {
@@ -153,7 +153,7 @@ Content-Type: application/json
 }
 
 ### Alterar paleontologo
-PUT http://localhost:5020/paleontologo/alterar/{id}
+PUT http://localhost:5020/api/paleontologo/alterar/{id}
 Content-Type: application/json
 
 {
@@ -161,7 +161,7 @@ Content-Type: application/json
 }
 
 ### Alterar area especializacao
-PUT http://localhost:5020/area_especializacao/alterar/{id}
+PUT http://localhost:5020/api/area_especializacao/alterar/{id}
 Content-Type: application/json
 
 {
@@ -169,7 +169,7 @@ Content-Type: application/json
 }
 
 ### Alterar formacao academica
-PUT http://localhost:5020/formacao_academica/alterar/{id}
+PUT http://localhost:5020/api/formacao_academica/alterar/{id}
 Content-Type: application/json
 
 {

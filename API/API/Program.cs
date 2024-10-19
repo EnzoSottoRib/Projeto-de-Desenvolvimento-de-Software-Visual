@@ -45,20 +45,20 @@ app.MapGet("/api/paleontologo/listar", ([FromServices] AppDataContext ctx) =>
     return Results.NotFound();
 });
 
-app.MapGet("/api/areas de especializacao/listar", ([FromServices] AppDataContext ctx) => 
+app.MapGet("/api/area de especialização/listar", ([FromServices] AppDataContext ctx) => 
 {
-    if (ctx.TabelaAreasEspecializacao.Any())
+    if (ctx.AreasEspecializacao.Any())
     {
-        return Results.OK(ctx.areasEspecializacao.ToList());
+        return Results.OK(ctx.AreasEspecializacao.ToList());
     }
     return Results.NotFound();
 });
 
 app.MapGet("/api/formacoes academicas/listar", ([FromServices] AppDataContext ctx) => 
 {
-    if (ctx.TabelaFormacoesAcademicas.Any())
+    if (ctx.FormacoesAcademicas.Any())
     {
-        return Results.OK(ctx.formacoesAcademicas.ToList());
+        return Results.OK(ctx.FormacoesAcademicas.ToList());
     }
     return Results.NotFound();
 });
@@ -111,7 +111,7 @@ app.MapGet("/api/peleontologo/buscar/{id}", ([FromRoute] int id,
 app.MapGet("/api/area de especialização/buscar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
-    AreasEspecializacao? areasEspecializacao = ctx.areasEspecializacao.Find(id);
+    AreasEspecializacao? areasEspecializacao = ctx.AreasEspecializacao.Find(id);
     if (areasEspecializacao is null)
     {
         return Results.NotFound();
@@ -122,18 +122,18 @@ app.MapGet("/api/area de especialização/buscar/{id}", ([FromRoute] int id,
 app.MapGet("/api/formacao academica/buscar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
-    FormacoesAcademica? formacoesAcademica = ctx.formacoesAcademica.Find(id);
-    if (FormacoesAcademicas is null)
+    FormacaoAcademica? formacaoAcademica = ctx.FormacoesAcademicas.Find(id);
+    if (formacaoAcademica is null)
     {
         return Results.NotFound();
     }
-    return Results.OK(FormacoesAcademica);
+    return Results.OK(formacaoAcademica);
 });
 
 //POST: /api/produto/cadastrar/param_nome
 app.MapPost("/api/artefato/cadastrar", ([FromBody] Artefato artefato, [FromServices] AppDataContext ctx) =>
 {
-    ctx.TabelaArtefatos.Add(artefato);
+    ctx.Artefatos.Add(artefato);
     ctx.SaveChanges();
     // bd
     return Results.Created("", artefato);
@@ -141,37 +141,37 @@ app.MapPost("/api/artefato/cadastrar", ([FromBody] Artefato artefato, [FromServi
 
 app.MapPost("/api/fossil/cadastrar", ([FromBody] Fossil fossil, [FromServices] AppDataContext ctx) =>
 {
-    ctx.TabelaFossils.Add(fossil);
+    ctx.Fosseis.Add(fossil);
     ctx.SaveChanges();
     return Results.Created("", fossil);
 });
 
 app.MapPost("/api/paleontologo/cadastrar", ([FromBody] Paleontologo paleontologo, [FromServices] AppDataContext ctx) =>
 {
-    ctx.TabelaPaleontologo.Add(paleontologo);
+    ctx.Paleontologos.Add(paleontologo);
     ctx.SaveChanges();
     return Results.Created("", paleontologo);
 });
 
 app.MapPost("/api/arqueologo/cadastrar", ([FromBody] Arqueologo arqueologo, [FromServices] AppDataContext ctx) =>
 {
-    ctx.TabelaArqueologo.Add(arqueologo);
+    ctx.Arqueologos.Add(arqueologo);
     ctx.SaveChanges();
     return Results.Created("", arqueologo);
 });
 
-app.MapPost("/api/area de especialização/cadastrar", ([FromBody] Arqueologo areasEspecializacao, [FromServices] AppDataContext ctx) =>
+app.MapPost("/api/area de especialização/cadastrar", ([FromBody] Arqueologo areaEspecializacao, [FromServices] AppDataContext ctx) =>
 {
-    ctx.TabelaAreasEspecializacao.Add(areasEspecializacao);
+    ctx.AreaEspecializacao.Add(areaEspecializacao);
     ctx.SaveChanges();
-    return Results.Created("", areasEspecializacao);
+    return Results.Created("", areaEspecializacao);
 });
 
-app.MapPost("/api/formacao academica/cadastrar", ([FromBody] Arqueologo formacoesAcademica, [FromServices] AppDataContext ctx) =>
+app.MapPost("/api/formacao academica/cadastrar", ([FromBody] Arqueologo formacaoAcademica, [FromServices] AppDataContext ctx) =>
 {
-    ctx.TabelaFormacoesAcademica.Add(formacoesAcademicas);
+    ctx.FormacaoAcademica.Add(formacaoAcademica);
     ctx.SaveChanges();
-    return Results.Created("", formacoesAcademicas);
+    return Results.Created("", formacaoAcademica);
 });
 //DELETE: /api/produto/deletar/{id}
 app.MapDelete("/api/fossil/deletar/{id}", ([FromRoute] int id,
@@ -230,26 +230,26 @@ app.MapDelete("/api/area de especialização/deletar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
     AreaEspecializacao? AreaEspecializacao = ctx.AreaEspecializacao.Find(id);
-    if (AreaEspecializacao is null)
+    if (areaEspecializacao is null)
     {
         return Results.NotFound();
     }
-    ctx.AreaEspecializacao.Remove(AreaEspecializacao);
+    ctx.AreaEspecializacao.Remove(areaEspecializacao);
     ctx.SaveChanges();
-    return Results.OK(AreaEspecializacao);
+    return Results.OK(areaEspecializacao);
 });
 
 app.MapDelete("/api/formacao academica/deletar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
-    FormacaoAcademica? paleontologo = ctx.formacoesAcademica.Find(id);
+    FormacaoAcademica? paleontologo = ctx.formacaoAcademica.Find(id);
     if (formacoesAcademica is null)
     {
         return Results.NotFound();
     }
-    ctx.formacoesAcademica.Remove(formacoesAcademica);
+    ctx.FormacaoAcademica.Remove(formacaoAcademica);
     ctx.SaveChanges();
-    return Results.OK(formacoesAcademica);
+    return Results.OK(formacaoAcademica);
 });
 
 //PUT: /api/produto/alterar/{id}
@@ -314,33 +314,33 @@ app.MapPut("/api/paleontologo/alterar/{id}", ([FromRoute] int id
 });
 
 app.MapPut("/api/area de especialização/alterar/{id}", ([FromRoute] int id
-    [FromBody] AreaEspecializacao areasEspecializacaoAlterada,
+    [FromBody] AreaEspecializacao areaEspecializacaoAlterada,
     [FromServices] AppDataContext ctx) =>
 {
-    AreaEspecializacao? areasEspecializacao = ctx.AreaEspecializacao.Find(id);
-    if (areasEspecializacao is null)
+    AreaEspecializacao? areaEspecializacao = ctx.AreaEspecializacao.Find(id);
+    if (areaEspecializacao is null)
     {
         return Results.NotFound();
     }
-    areasEspecializacao.Nome = areasEspecializacaoAlterada.Nome;
+    areaEspecializacao.Nome = areasEspecializacaoAlterada.Nome;
     ctx.AreaEspecializacao.Update(areaEspecializacao);
     ctx.SaveChanges();
     return Results.OK(areaEspecializacao)
 });
 
 app.MapPut("/api/formacao academica/alterar/{id}", ([FromRoute] int id
-    [FromBody] FormacaoAcademica formacoeAcademicaAlterada,
+    [FromBody] FormacaoAcademica formacaoAcademicaAlterada,
     [FromServices] AppDataContext ctx) =>
 {
-    FormacaoAcademica? formacoeAcademica = ctx.FormacaoAcademica.Find(id);
+    FormacaoAcademica? formacaoAcademica = ctx.FormacaoAcademica.Find(id);
     if (formacoeAcademica is null)
     {
         return Results.NotFound();
     }
-    formacoeAcademica.Universidade = formacoeAcademica.Universidade;
-    ctx.formacoeAcademica.Update(formacoeAcademica);
+    formacoeAcademica.Universidade = formacaoAcademica.Universidade;
+    ctx.FormacaoAcademica.Update(formacaoAcademica);
     ctx.SaveChanges();
-    return Results.OK(formacoeAcademica)
+    return Results.OK(formacaoAcademica)
 });
 
 app.Run();

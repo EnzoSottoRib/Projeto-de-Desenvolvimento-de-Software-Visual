@@ -14,6 +14,7 @@ var app = builder.Build();
 app.MapGet("/", () => "API Sítio Arqueológico");
 
 
+
 app.MapGet("/api/arqueologo/listar", ([FromServices] AppDataContext ctx) => 
 {
     if (ctx.Arqueologos.Any())
@@ -68,7 +69,7 @@ app.MapGet("/api/formacao-academica/listar", ([FromServices] AppDataContext ctx)
     return Results.NotFound();
 });
 
-//GET: /api/produto/buscar/{id}
+//GET: /api/arqueologo/buscar/{id}
 app.MapGet("/api/arqueologo/buscar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {

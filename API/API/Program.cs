@@ -101,7 +101,7 @@ app.MapGet("/api/peleontologo/buscar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
     Peleontologo? peleontologo = ctx.paleontologos.Find(id);
-    if (fossil is null)
+    if (paleontologo is null)
     {
         return Results.NotFound();
     }

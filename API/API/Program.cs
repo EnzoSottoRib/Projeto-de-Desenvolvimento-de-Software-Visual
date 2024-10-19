@@ -11,36 +11,36 @@ app.MapGet("/", () => "API Sítio Arqueológico");
 //GET: /api/produto/listar
 app.MapGet("/api/arqueologo/listar", ([FromServices] AppDataContext ctx) => 
 {
-    if (ctx.TabelaArqueologos.Any())
+    if (ctx.Arqueologos.Any())
     {
-        return Results.OK(ctx.arqueologos.ToList());
+        return Results.OK(ctx.Arqueologos.ToList());
     }
     return Results.NotFound();
 });
 
 app.MapGet("/api/artefato/listar", ([FromServices] AppDataContext ctx) => 
 {
-    if (ctx.TabelaArtefatos.Any())
+    if (ctx.Artefatos.Any())
     {
-        return Results.OK(ctx.arterfatos.ToList());
+        return Results.OK(ctx.Arterfatos.ToList());
     }
     return Results.NotFound();
 });
 
 app.MapGet("/api/fossil/listar", ([FromServices] AppDataContext ctx) => 
 {
-    if (ctx.TabelaFossilsfossil.Any())
+    if (ctx.Fosseis.Any())
     {
-        return Results.OK(ctx.fossils.ToList());
+        return Results.OK(ctx.Fosseis.ToList());
     }
     return Results.NotFound();
 });
 
 app.MapGet("/api/paleontologo/listar", ([FromServices] AppDataContext ctx) => 
 {
-    if (ctx.TabelaPaleontologos.Any())
+    if (ctx.Paleontologos.Any())
     {
-        return Results.OK(ctx.paleontologos.ToList());
+        return Results.OK(ctx.Paleontologos.ToList());
     }
     return Results.NotFound();
 });
@@ -78,8 +78,8 @@ app.MapGet("/api/arqueologo/buscar/{id}", ([FromRoute] int id,
 app.MapGet("/api/artefato/buscar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
-    Artefato? artefato = ctx.artefato.Find(id);
-    if (arqueologo is null)
+    Artefato? artefato = ctx.Artefatos.Find(id);
+    if (artefato is null)
     {
         return Results.NotFound();
     }
@@ -89,7 +89,7 @@ app.MapGet("/api/artefato/buscar/{id}", ([FromRoute] int id,
 app.MapGet("/api/fossil/buscar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
-    Fossil? fossil = ctx.fossil.Find(id);
+    Fossil? fossil = ctx.Fosseis.Find(id);
     if (fossil is null)
     {
         return Results.NotFound();
@@ -100,7 +100,7 @@ app.MapGet("/api/fossil/buscar/{id}", ([FromRoute] int id,
 app.MapGet("/api/peleontologo/buscar/{id}", ([FromRoute] int id,
     [FromServices] AppDataContext ctx) =>
 {
-    Peleontologo? peleontologo = ctx.fossil.Find(id);
+    Peleontologo? peleontologo = ctx.paleontologos.Find(id);
     if (fossil is null)
     {
         return Results.NotFound();

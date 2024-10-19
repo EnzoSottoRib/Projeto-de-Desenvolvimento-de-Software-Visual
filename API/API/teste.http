@@ -2,43 +2,43 @@
 GET http://localhost:5020
 
 ### Listar arqueologos
-GET http://localhost:5020/arqueologo/listar
+GET http://localhost:5020/api/arqueologo/listar
 
 ### Listar artefatos
-GET http://localhost:5020/artefato/listar
+GET http://localhost:5020/api/artefato/listar
 
 ### Listar fosseis
-GET http://localhost:5020/fossil/listar
+GET http://localhost:5020/api/fossil/listar
 
 ### Listar paleontologos
-GET http://localhost:5020/paleontologo/listar
+GET http://localhost:5020/api/paleontologo/listar
 
 ### Listar areas de especializacao
-GET http://localhost:5020/area-especializacao/listar
+GET http://localhost:5020/api/area-especializacao/listar
 
 ### Listar formacoes academicas
-GET http://localhost:5020/formacao_academica/listar
+GET http://localhost:5020/api/formacao-academica/listar
 
 ### Buscar arqueologo
-GET http://localhost:5020/arqueologo/buscar/{nome}
+GET http://localhost:5020/api/arqueologo/buscar/1
 
 ### Buscar artefato
-GET http://localhost:5020/artefato/buscar/{nome}
+GET http://localhost:5020/api/artefato/buscar/1
 
-### Buscar fossei
-GET http://localhost:5020/fossil/buscar/{nome}
+### Buscar fossil
+GET http://localhost:5020/api/fossil/buscar/1
 
 ### Buscar peleontologo
-GET http://localhost:5020/peleontologo/buscar/{nome}
+GET http://localhost:5020/api/paleontologo/buscar/1
 
 ### Buscar area especializacao
-GET http://localhost:5020/area-especializacao/buscar/{nome}
+GET http://localhost:5020/api/area-especializacao/buscar/1
 
 ### Buscar formacao academica
-GET http://localhost:5020/formacao-academica/buscar/{nome}
+GET http://localhost:5020/api/formacao-academica/buscar/1
 
 ### Cadastrar artefato
-POST http://localhost:5020/artefato/cadastrar
+POST http://localhost:5020/api/artefato/cadastrar
 Content-Type: application/json
 
 {
@@ -47,12 +47,12 @@ Content-Type: application/json
   "civilizacaoOrigem": "Primeiros humanos America do Norte",
   "funcionalidade": "Criação de cordas",
   "dimensao": "21cm",
-  "material": "Origem vegetal"
+  "material": "Origem vegetal",
   "arqueologoId": 1
 }
 
 ### Cadastrar fossil
-POST http://localhost:5020/fossil/cadastrar
+POST http://localhost:5020/api/fossil/cadastrar
 Content-Type: application/json
 
 {
@@ -62,8 +62,8 @@ Content-Type: application/json
   "tipoFossil": "Crânio",
   "especiaOrganismo": "T-Rex",
   "condicaoPreservacao": "Deteriorada",
-  "epocaGeologica": "Cretáceo"
-  "paleontologoId": 1
+  "epocaGeologica": "Cretáceo",
+  "paleontologoId": 2
 }
 
 ### Cadastrar paleontologo
@@ -76,7 +76,7 @@ Content-Type: application/json
   "dataNascimento": "1995-09-05", 
   "anosExperiencia": 4, 
   "areaEspecializacaoId": 1,
-  "idMatricula": 578234634734
+  "idMatricula": 57823463
 }
 
 ### Cadastrar arqueologo
@@ -86,10 +86,10 @@ Content-Type: application/json
 {
   "nome": "Tiririca Messias Bolsonaro",
   "cpf": "772-642-126.12",
-  "dataNascimento": "10/01/1980",
+  "dataNascimento": "1985-01-15",
   "anosExperiencia": "10",
-  "idRegistroProfissional":45745743456674,
-  "formacaoAcademicaId": 2
+  "idRegistroProfissional":45745743,
+  "formacaoAcademicaId": 1
 }
 
 ### Cadastrar area especializacao
@@ -97,39 +97,39 @@ POST http://localhost:5020/api/area-especializacao/cadastrar
 Content-Type: application/json
 
 {
-  "nome": "Triceratops",
-  "pais": "Irlanda"
+  "nome": "Estegossauro",
+  "pais": "Brasil"
 }
 
 ### Cadastrar formacao academica
-POST http://localhost:5020/formacao-academica/cadastrar
+POST http://localhost:5020/api/formacao-academica/cadastrar
 Content-Type: application/json
 
 {
   "nome": "Geologia",
-  "universidade": "Universidade de Portsmouth, Inglaterra"
+  "universidade": "Universidade de Helsinki, Finlandia"
 }
 
 ### Deletar fossil
-DELETE http://localhost:5020/fossil/deletar/{id}
+DELETE http://localhost:5020/api/fossil/deletar/1
 
 ### Deletar artefato
-DELETE http://localhost:5020/artefato/deletar/{id}
+DELETE http://localhost:5020/api/artefato/deletar/1
 
 ### Deletar arqueologo
-DELETE http://localhost:5020/arqueologo/deletar/{id}
+DELETE http://localhost:5020/api/arqueologo/deletar/1
 
 ### Deletar paleontologo
-DELETE http://localhost:5020/paleontologo/deletar/{id}
+DELETE http://localhost:5020/api/paleontologo/deletar/1
 
 ### Deletar formacao academica
-DELETE http://localhost:5020/formacao-academica/deletar/{id}
+DELETE http://localhost:5020/api/formacao-academica/deletar/1
 
 ### Deletar area especializacao
-DELETE http://localhost:5020/area-especializacao/deletar/{id}
+DELETE http://localhost:5020/api/area-especializacao/deletar/1
 
 ### Alterar fossil
-PUT http://localhost:5020/fossil/alterar/{id}
+PUT http://localhost:5020/api/fossil/alterar/1
 Content-Type: application/json
 
 {
@@ -137,7 +137,7 @@ Content-Type: application/json
 }
 
 ### Alterar artefato
-PUT http://localhost:5020/artefato/alterar/{id}
+PUT http://localhost:5020/api/artefato/alterar/1
 Content-Type: application/json
 
 {
@@ -145,7 +145,7 @@ Content-Type: application/json
 }
 
 ### Alterar arqueologo
-PUT http://localhost:5020/arqueologo/alterar/{id}
+PUT http://localhost:5020/api/arqueologo/alterar/1
 Content-Type: application/json
 
 {
@@ -153,15 +153,15 @@ Content-Type: application/json
 }
 
 ### Alterar paleontologo
-PUT http://localhost:5020/paleontologo/alterar/{id}
+PUT http://localhost:5020/api/paleontologo/alterar/1
 Content-Type: application/json
 
 {
-  "idMatricula": 666364534356432
+  "idMatricula": 66636457
 }
 
 ### Alterar area especializacao
-PUT http://localhost:5020/area_especializacao/alterar/{id}
+PUT http://localhost:5020/api/area-especializacao/alterar/1
 Content-Type: application/json
 
 {
@@ -169,7 +169,7 @@ Content-Type: application/json
 }
 
 ### Alterar formacao academica
-PUT http://localhost:5020/formacao_academica/alterar/{id}
+PUT http://localhost:5020/api/formacao-academica/alterar/1
 Content-Type: application/json
 
 {

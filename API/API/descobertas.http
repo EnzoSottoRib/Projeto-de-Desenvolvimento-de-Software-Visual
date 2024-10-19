@@ -63,7 +63,7 @@ Content-Type: application/json
   "especiaOrganismo": "T-Rex",
   "condicaoPreservacao": "Deteriorada",
   "epocaGeologica": "Cretáceo",
-  "paleontologoId": 2
+  "paleontologoId": 3
 }
 
 ### Cadastrar paleontologo
